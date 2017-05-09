@@ -23,6 +23,10 @@ package de.uos.inf.did.abbozza.install;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import javax.swing.JDialog;
 
 /**
@@ -159,6 +163,17 @@ public class AbbozzaInstaller extends javax.swing.JDialog {
         System.exit(0);
     }//GEN-LAST:event_cancelActionPerfromed
 
+    public static void copyToFile(InputStream inp, File file) throws IOException {
+        FileOutputStream out = new FileOutputStream(file);
+        byte buf[] = new byte[1024];
+        while ( inp.available() > 0 ) {
+            int len = inp.read(buf);
+            out.write(buf, 0, len);
+        }
+        out.close();
+        inp.close();
+    }
+    
     /**
      * @param args the command line arguments
      */

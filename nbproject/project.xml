@@ -6,7 +6,7 @@
             <name>abbozza-install</name>
             <source-roots>
                 <root id="src.dir"/>
-                <root id="src.jars.dir" name="Jar files for installation"/>
+                <root id="src.lib.dir"/>
             </source-roots>
             <test-roots>
                 <root id="test.src.dir"/>
